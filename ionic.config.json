@@ -1,0 +1,7 @@
+{
+  "name": "kpp_lr6-10",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

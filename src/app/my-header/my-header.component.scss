@@ -1,0 +1,30 @@
+/* Стилі для ion-header */
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+    --color: inherit;
+
+    ion-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Для першого тулбара (secondary) */
+    &.custom-secondary {
+      --background: #f5f5f5;
+      ion-title {
+        color: #333;
+      }
+    }
+
+    /* Для другого тулбара (tertiary) */
+    &.custom-tertiary {
+      --background: #ff5733;
+      ion-title {
+        color: white;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
