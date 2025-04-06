@@ -1,5 +1,5 @@
 // npx cypress run --headless --code-coverage
-import {Bouquet} from "../../../src/app/FlowerDeliveryService/Bouquet";
+import {Bouquet} from "../../../src/app/FlowerDeliveryService/basic/Bouquet";
 
 describe('Bouquet Class', () => {
     let bouquet: Bouquet;

@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {IProduct} from "./IProduct";
+import {IProduct} from "./basic/IProduct";
 import {ProductFactory} from "./ProductFactory";
 
 const API_URL = 'https://api.jsonbin.io/v3/b/67f175418a456b796683122f';

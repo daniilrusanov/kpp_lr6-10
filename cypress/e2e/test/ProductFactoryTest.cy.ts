@@ -1,7 +1,7 @@
 import {ProductFactory} from "../../../src/app/FlowerDeliveryService/ProductFactory";
-import {GiftSet} from "../../../src/app/FlowerDeliveryService/GiftSet";
-import {IndoorPlant} from "../../../src/app/FlowerDeliveryService/IndoorPlant";
-import {Bouquet} from "../../../src/app/FlowerDeliveryService/Bouquet";
+import {GiftSet} from "../../../src/app/FlowerDeliveryService/basic/GiftSet";
+import {IndoorPlant} from "../../../src/app/FlowerDeliveryService/basic/IndoorPlant";
+import {Bouquet} from "../../../src/app/FlowerDeliveryService/basic/Bouquet";
 
 describe('ProductFactory Tests', () => {
     it('should create a Bouquet product', () => {

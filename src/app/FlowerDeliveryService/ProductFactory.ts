@@ -1,8 +1,8 @@
-import {Bouquet} from "./Bouquet";
-import {IndoorPlant} from "./IndoorPlant";
-import {GiftSet} from "./GiftSet";
+import {Bouquet} from "./basic/Bouquet";
+import {IndoorPlant} from "./basic/IndoorPlant";
+import {GiftSet} from "./basic/GiftSet";
 import {productType} from "./ProductType";
-import {IProduct} from "./IProduct";
+import {IProduct} from "./basic/IProduct";
 
 export class ProductFactory {
 
