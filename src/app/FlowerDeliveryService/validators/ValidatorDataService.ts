@@ -2,7 +2,7 @@ import {StringToDate} from "./StringToDate";
 
 export class ValidatorDataService {
     validate_date(value: string) {
-        let arrD: string[] = [];
+        let arrD: string[];
         arrD = value.split(/[.-/]/);
         let arrDate: number[] = [];
         arrD.forEach((item) => {
@@ -10,14 +10,10 @@ export class ValidatorDataService {
         });
         arrDate[1] -= 1;
         let d = StringToDate(value);
-        if (
-            d.getFullYear() === (arrDate[2]) &&
+        return d.getFullYear() === (arrDate[2]) &&
             d.getMonth() === (arrDate[1]) &&
             d.getDate() === arrDate[0] &&
-            arrDate[2] > 1000
-        ) {
-            return true;
-        } else return false;
+            arrDate[2] > 1000;
     }
     constructor() {}
 }

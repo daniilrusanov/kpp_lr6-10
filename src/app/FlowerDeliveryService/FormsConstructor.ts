@@ -1,5 +1,5 @@
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ProductType, productType} from "./ProductType";
+import {productType} from "./ProductType";
 import {durationValidator} from "./validators/DurationValidator";
 import {dateValidator} from "./validators/DateValidator";
 

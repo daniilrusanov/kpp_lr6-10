@@ -1,8 +1,7 @@
 import {AbstractControl, ValidatorFn} from '@angular/forms';
 
 export function isValidDuration(value: number): boolean {
-    if (value <= 12 && value >= 3) return true;
-    else return false;
+    return value <= 12 && value >= 3;
 }
 
 export function durationValidator(): ValidatorFn {
