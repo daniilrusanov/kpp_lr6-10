@@ -27,7 +27,7 @@ export class Bouquet extends Product {
             `Flower count: ${this._flowerCount}`,
             `Package type: ${this._packageType}`,
             `Color theme: ${this._colorTheme}`,
-            `Note included: ${this._hasNote ? 'Yes' : 'No'}`
+            `Message included?: ${this._hasNote ? 'Yes' : 'No'}`
         ];
     }
 
