@@ -1,0 +1,106 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <!-- Загальні поля  -->
+    <ion-card class="course-card">
+        <ion-card-header class="ccheader">
+            <ion-card-title>Додати товар</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="body">
+            <ion-item>
+                <ion-input
+                        label="Назва"
+                        formControlName="name"
+                        labelPlacement="floating"
+                        errorText="Назва повинна бути більша за 3 символи"
+                        class="custom"
+                ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input
+                        label="Вартість"
+                        formControlName="price"
+                        type="number"
+                        labelPlacement="floating"
+                        errorText="Ціна повинна бути більша за 0"
+                        class="custom"
+                ></ion-input>
+            </ion-item>
+            <!-- !Поля для книги та підписки  -->
+            <ion-segment (ionChange)="onTypeChange($event.detail.value)">
+                <ion-segment-button value="Bouquet" contentId="Bouquet">
+                    <ion-label>Bouquet</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="GiftSet" contentId="GiftSet">
+                    <ion-label>GiftSet</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+            <ion-segment-view>
+                <!-- Окремі поля для букету  -->
+                <ion-segment-content id="Bouquet" *ngIf="currentType === types[0] || currentType === types[3]">
+                    <ion-checkbox labelPlacement="stacked" alignment="center"
+                                  (ionChange)="onEProductChange($event.detail.checked)"
+                    >Цифровий букет
+                    </ion-checkbox>
+                    <ion-item>
+                        <ion-input
+                                *ngIf="currentType === types[0] || currentType === types[3]"
+                                label="Кількість квітів"
+                                formControlName="flowerCount"
+                                labelPlacement="floating"
+                                type="number"
+                                errorText="Кількість квітів має бути більша за 20"
+                                class="custom"
+                        ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input
+                                *ngIf="currentType === types[0] || currentType === types[3]"
+                                label="Виберіть пакування"
+                                formControlName="packageType"
+                                labelPlacement="floating"
+                                errorText="Пакуівання має бути довшим за 0 символів"
+                                class="custom"
+                        ></ion-input>
+                    </ion-item>
+                    <!-- Додаткові поля для електронного букету  -->
+                    <ion-item *ngIf="currentType === types[3]">
+                        <select id="format" formControlName="format">
+                            <option value="" disabled>Оберіть формат</option>
+                            <option *ngFor="let type of formats" [value]="type"> {{ type }}</option>
+                        </select>
+                    </ion-item>
+                </ion-segment-content>
+                <!-- Поля для підписки  -->
+                <ion-segment-content id="GiftSet" *ngIf="currentType === types[2]">
+                    <ion-item>
+                        <ion-input
+                                *ngIf="currentType === types[2]"
+                                label="Термін підписки від 3 до 12 місяців"
+                                formControlName="duration"
+                                type="number"
+                                labelPlacement="floating"
+                                errorText="Термін підписки повинен бути від 3 до 12 місяців"
+                                class="custom"
+                        ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input
+                                *ngIf="currentType === types[2]"
+                                label="Дата підписки"
+                                formControlName="date"
+                                type="date"
+                                labelPlacement="floating"
+                                errorText="Дата повинна бути меншою за поточну"
+                                class="custom"
+                        ></ion-input>
+                    </ion-item>
+                </ion-segment-content>
+            </ion-segment-view>
+        </ion-card-content>
+    </ion-card>
+    <ion-button
+            type="submit"
+            (click)="onSubmit()"
+            [disabled]="!isFormValid()"
+    >Submit
+    </ion-button>
+</form>
