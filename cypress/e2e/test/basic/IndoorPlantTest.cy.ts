@@ -1,6 +1,6 @@
 // npx cypress run --headless --code-coverage
 
-import {IndoorPlant} from "../../../src/app/FlowerDeliveryService/basic/IndoorPlant";
+import {IndoorPlant} from "../../../../src/app/FlowerDeliveryService/basic/IndoorPlant";
 
 describe('IndoorPlant Class', () => {
     let indoorPlant: IndoorPlant;
