@@ -1,5 +1,5 @@
 export function StringToDate(value: string): Date {
-    let arrD: string[] = [];
+    let arrD: string[];
     arrD = value.split(/[.-/]/);
     let arrDate: number[] = [];
     arrD.forEach((item) => {
