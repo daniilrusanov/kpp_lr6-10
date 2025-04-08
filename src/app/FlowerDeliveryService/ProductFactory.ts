@@ -24,7 +24,7 @@ export class ProductFactory {
             data.id,
             data.name,
             data.price,
-            data.format = 'gif',
+            data.format ?? 'gif',
             data.flowerCount ?? 0,
             data.packageType ?? 'Paper',
             data.colorTheme ?? 'Basic',
@@ -54,6 +54,8 @@ export class ProductFactory {
             data.price,
             bouquets,
             indoorPlants,
+            data.duration ?? 4,
+            data.date ?? "01.01.2025",
             data.packagingType ?? 'Box',
             data.occasion ?? 'Birthday',
             data.personalMessage ?? ''
