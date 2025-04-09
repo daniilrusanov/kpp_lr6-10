@@ -27,6 +27,15 @@
                 (productEdit)="editProduct($event, i)"
                 [product]="product"
         ></app-edit-product>
+
+        <!-- Видалення товару -->
+        <ion-button (click)="deleteFormShow(i)">Видалити товар</ion-button>
+        <app-delete-product
+                *ngIf="showDeleteForm && i == deleteFormNumber"
+                [product]="product"
+                (confirm)="deleteProduct(i)"
+                (cancel)="hideDeleteForm()"
+        ></app-delete-product>
     </ion-card>
 
     <!-- Додавання товару -->
@@ -37,6 +46,4 @@
             addProduct($event)"
     ></app-add-product>
 
-
-    <!-- Видалення товару -->
 </ion-content>

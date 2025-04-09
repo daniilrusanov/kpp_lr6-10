@@ -37,4 +37,8 @@ export class ProductReadService {
         products.forEach((product: any) => this.addProduct(product));
       });
   }
+
+    save() {
+        localStorage.setItem('products', JSON.stringify(this.products));
+    }
 }
