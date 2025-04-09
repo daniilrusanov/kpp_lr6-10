@@ -6,7 +6,6 @@ export function isValidDuration(value: number): boolean {
 
 export function durationValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: boolean } | null => {
-        // let validator = new ValidatorDurationService();
         let valid = !control.value || isValidDuration(control.value);
         return valid ? null : {date: true};
     };

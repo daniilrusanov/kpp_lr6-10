@@ -1,7 +1,6 @@
-// npx cypress run --headless --code-coverage
-import {GiftSet} from "../../../../src/app/FlowerDeliveryService/basic/GiftSet";
-import {Bouquet} from "../../../../src/app/FlowerDeliveryService/basic/Bouquet";
-import {IndoorPlant} from "../../../../src/app/FlowerDeliveryService/basic/IndoorPlant";
+import { GiftSet } from "../../../../src/app/FlowerDeliveryService/basic/GiftSet";
+import { Bouquet } from "../../../../src/app/FlowerDeliveryService/basic/Bouquet";
+import { IndoorPlant } from "../../../../src/app/FlowerDeliveryService/basic/IndoorPlant";
 
 describe('GiftSet Class', () => {
     let bouquet: Bouquet;
@@ -18,6 +17,8 @@ describe('GiftSet Class', () => {
             1000,
             [bouquet],
             [indoorPlant],
+            6,
+            20231001,
             'Box',
             'Anniversary',
             'Love you!'
@@ -35,6 +36,8 @@ describe('GiftSet Class', () => {
         expect(giftSet.getDetails()).to.deep.equal([
             "Bouquets: 1",
             "Indoor Plants: 1",
+            "Duration: 6 month",
+            "Date: 20231001",
             "Packaging: Box",
             "Occasion: Anniversary",
             "Message: Love you!",
@@ -42,7 +45,7 @@ describe('GiftSet Class', () => {
             "Flower count: 15",
             "Package type: Paper",
             "Color theme: Red",
-            "Note included: Yes",
+            "Message included?: Yes",
             "HousePlant details:",
             "Pot type: Ceramic",
             "Watering: Monthly",
@@ -58,16 +61,21 @@ describe('GiftSet Class', () => {
             300,
             [],
             [],
+            0,
+            0,
             'Bag',
             'Birthday',
             ''
         );
+
         expect(emptyGiftSet.getDetails()).to.deep.equal([
             "Bouquets: 0",
             "Indoor Plants: 0",
+            "Duration: 0 month",
+            "Date: 0",
             "Packaging: Bag",
             "Occasion: Birthday",
-            "Message: ",
+            "Message: None",
             "Bouquet details:",
             "HousePlant details:"
         ]);

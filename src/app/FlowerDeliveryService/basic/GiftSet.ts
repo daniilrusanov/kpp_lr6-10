@@ -38,13 +38,13 @@ export class GiftSet extends Product {
         const housePlantDetails = this._indoorPlants.flatMap(hp => hp.getDetails());
 
         return [
-            `Bouquets: ${this._indoorPlants.length}`,
+            `Bouquets: ${this._bouquets.length}`,
             `Indoor Plants: ${this._indoorPlants.length}`,
             `Duration: ${this._duration} month`,
             `Date: ${this._date}`,
             `Packaging: ${this._packagingType}`,
             `Occasion: ${this._occasion}`,
-            `Message: ${this._personalMessage ?? 'None'}`,
+            `Message: ${this._personalMessage || 'None'}`,
             'Bouquet details:',
             ...bouquetDetails,
             'HousePlant details:',
