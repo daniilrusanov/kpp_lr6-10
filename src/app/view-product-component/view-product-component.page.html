@@ -19,11 +19,24 @@
             </ion-item>
         </ion-card-content>
         <ion-button>Купити</ion-button>
+
+        <!-- Редагування товару -->
+        <ion-button (click)="editFormShow(i)">Редагувати товар</ion-button>
+        <app-edit-product
+                *ngIf="showEditForm && i == editFormNumber"
+                (productEdit)="editProduct($event, i)"
+                [product]="product"
+        ></app-edit-product>
     </ion-card>
+
+    <!-- Додавання товару -->
     <ion-button (click)="addFormShow()">Додати товари</ion-button>
     <app-add-product
             *ngIf="showAddForm"
             (productAdd)="
             addProduct($event)"
     ></app-add-product>
+
+
+    <!-- Видалення товару -->
 </ion-content>

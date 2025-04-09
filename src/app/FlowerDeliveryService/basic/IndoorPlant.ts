@@ -15,7 +15,7 @@ export class IndoorPlant extends Product {
         size: string,
         isBlooming: boolean
     ) {
-        super(id, name, price, 'Indoor Plant');
+        super(id, name, price, 'IndoorPlant');
         this._potType = potType;
         this._wateringFrequency = wateringFrequency;
         this._size = size;

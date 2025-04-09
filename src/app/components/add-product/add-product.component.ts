@@ -58,7 +58,6 @@ export class AddProductComponent implements OnInit {
           duration: [''],
           date: ['']
         });
-
     }
 
     onEProductChange(change: any) {

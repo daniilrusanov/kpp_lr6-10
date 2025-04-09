@@ -1,0 +1,125 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <ion-card class="course-card">
+        <ion-card-header class="ccheader">
+            <ion-card-title>Редагування товару</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="body">
+            <ion-item>
+                <ion-input
+                        label="Назва"
+                        labelPlacement="floating"
+                        errorText="Назва повинна бути більше за 3 символи"
+                        class="custom"
+                        [value]="product.getName()"
+                        formControlName="name"
+                ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input
+                        label="Вартість: "
+                        labelPlacement="number"
+                        errorText="Ціна повинна бути більше за 0"
+                        class="custom"
+                        type="number"
+                        [value]="product.getPrice()"
+                        formControlName="price"
+                ></ion-input>
+            </ion-item>
+
+            <fieldset *ngIf="product.getType() === types[0] || product.getType() === types[3]">
+                <ion-item>
+                    <ion-input
+                            label="Кількість квітів: "
+                            formControlName="flowerCount"
+                            labelPlacement="number"
+                            type="number"
+                            errorText="Кількість квітів має бути більша за 20"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input
+                            label="Пакування"
+                            formControlName="packageType"
+                            labelPlacement="floating"
+                            errorText="Пакуівання має бути довшим за 0 символів"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input
+                            label="Колір квітів"
+                            formControlName="colorTheme"
+                            labelPlacement="floating"
+                            errorText="Колір має бути довшим за 0 символів"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+            </fieldset>
+
+            <fieldset *ngIf="product.getType() === types[1]">
+                <ion-item>
+                    <ion-input
+                            label="Виберіть горщик"
+                            formControlName="potType"
+                            labelPlacement="floating"
+                            errorText="Вид горщику має бути довшим за 0 символів"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input
+                            label="Як треба поливати?"
+                            formControlName="Watering"
+                            labelPlacement="floating"
+                            errorText="Полив має бути довшим за 0 символів"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input
+                            label="Оберіть розмір"
+                            formControlName="Size"
+                            labelPlacement="floating"
+                            errorText="Пакування має бути довшим за 0 символів"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+            </fieldset>
+
+            <fieldset *ngIf="product.getType() === types[2]">
+                <ion-item>
+                    <ion-input
+                            label="Термін підписки від 3 до 12 місяців"
+                            formControlName="duration"
+                            type="number"
+                            labelPlacement="floating"
+                            errorText="Термін підписки повинен бути від 3 до 12 місяців"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input
+                            label="Дата підписки"
+                            formControlName="date"
+                            type="date"
+                            labelPlacement="floating"
+                            errorText="Дата повинна бути меншою за поточну"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input
+                            label="Оберіть пакування"
+                            formControlName="packagingType"
+                            labelPlacement="floating"
+                            errorText="Пакування має бути довшим за 0 символів"
+                            class="custom"
+                    ></ion-input>
+                </ion-item>
+            </fieldset>
+
+            <ion-button type="submit" (click)="onSubmit()">Submit</ion-button>
+        </ion-card-content>
+    </ion-card>
+</form>
