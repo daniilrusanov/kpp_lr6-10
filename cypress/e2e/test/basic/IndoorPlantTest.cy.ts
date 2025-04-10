@@ -13,7 +13,7 @@ describe('IndoorPlant Class', () => {
         expect(indoorPlant.getID()).to.equal(1);
         expect(indoorPlant.getName()).to.equal('Aloe Vera');
         expect(indoorPlant.getPrice()).to.equal(200);
-        expect(indoorPlant.getType()).to.equal('Indoor Plant');
+        expect(indoorPlant.getType()).to.equal('IndoorPlant');
         expect(indoorPlant.potType).to.equal('Ceramic');
         expect(indoorPlant.wateringFrequency).to.equal('Monthly');
         expect(indoorPlant.size).to.equal('Small');
