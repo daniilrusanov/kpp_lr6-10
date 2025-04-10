@@ -29,7 +29,7 @@ describe('GiftSet Class', () => {
         expect(giftSet.getID()).to.equal(3);
         expect(giftSet.getName()).to.equal('Romantic Gift');
         expect(giftSet.getPrice()).to.equal(1000);
-        expect(giftSet.getType()).to.equal('Gift Set');
+        expect(giftSet.getType()).to.equal('GiftSet');
     });
 
     it('should return correct details array', () => {

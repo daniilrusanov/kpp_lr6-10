@@ -23,7 +23,7 @@ export class GiftSet extends Product {
         occasion: string,
         personalMessage: string
     ) {
-        super(id, name, price, 'Gift Set');
+        super(id, name, price, 'GiftSet');
         this._bouquets = bouquets;
         this._indoorPlants = indoorPlants;
         this._duration = duration;
