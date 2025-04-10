@@ -10,7 +10,7 @@ import {
   IonItem,
   IonLabel
 } from '@ionic/angular/standalone';
-import {MyHeaderComponent} from "../../my-header/my-header.component";
+import {MyHeaderComponent} from "../../components/my-header/my-header.component";
 import {ProductReadService} from "../../FlowerDeliveryService/service/ProductReadService";
 import {AddProductComponent} from "../../components/add-product/add-product.component";
 import {EditProductComponent} from "../../components/edit-product/edit-product.component";
