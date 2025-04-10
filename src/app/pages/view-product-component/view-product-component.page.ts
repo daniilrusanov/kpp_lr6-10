@@ -10,11 +10,11 @@ import {
   IonItem,
   IonLabel
 } from '@ionic/angular/standalone';
-import {MyHeaderComponent} from "../my-header/my-header.component";
-import {ProductReadService} from "../FlowerDeliveryService/service/ProductReadService";
-import {AddProductComponent} from "../components/add-product/add-product.component";
-import {EditProductComponent} from "../components/edit-product/edit-product.component";
-import {DeleteProductComponent} from "../components/delete-product/delete-product.component";
+import {MyHeaderComponent} from "../../my-header/my-header.component";
+import {ProductReadService} from "../../FlowerDeliveryService/service/ProductReadService";
+import {AddProductComponent} from "../../components/add-product/add-product.component";
+import {EditProductComponent} from "../../components/edit-product/edit-product.component";
+import {DeleteProductComponent} from "../../components/delete-product/delete-product.component";
 
 @Component({
   selector: 'app-view-product-component',
