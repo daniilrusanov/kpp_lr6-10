@@ -71,7 +71,7 @@ export class AddProductComponent implements OnInit {
     }
 
     onSubmit(): void {
-        if (this.productForm.valid) {
+        if (this.isFormValid()) {
             const formData = this.productForm.value;
             formData.type = this.currentType;
             const product = ProductFactory.createProduct(formData);

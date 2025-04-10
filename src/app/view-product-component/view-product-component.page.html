@@ -42,8 +42,7 @@
     <ion-button (click)="addFormShow()">Додати товари</ion-button>
     <app-add-product
             *ngIf="showAddForm"
-            (productAdd)="
-            addProduct($event)"
+            (productAdd)="addProduct($event)"
     ></app-add-product>
 
 </ion-content>
