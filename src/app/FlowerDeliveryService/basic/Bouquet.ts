@@ -13,9 +13,10 @@ export class Bouquet extends Product {
         flowerCount: number,
         packageType: string ,
         colorTheme: string,
-        hasNote: boolean
+        hasNote: boolean,
+        type: string = "Bouquet"
     ) {
-        super(id, name, price, "Bouquet");
+        super(id, name, price, type);
         this._flowerCount = flowerCount;
         this._packageType = packageType;
         this._colorTheme = colorTheme;
