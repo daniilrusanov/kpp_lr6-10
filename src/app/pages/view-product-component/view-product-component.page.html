@@ -1,7 +1,16 @@
 <app-my-header name="Лабораторна робота №6"></app-my-header>
 
-
 <ion-content [fullscreen]="true">
+    <ion-card-content>
+        <!-- Перехід на іншу сторінку -->
+        <ion-button class="buttons" routerLink="/filter-page">Перейти до фільтрації</ion-button>
+        <!-- Додавання товару -->
+        <ion-button class="buttons" (click)="addFormShow()">Додати товари</ion-button>
+        <app-add-product
+                *ngIf="showAddForm"
+                (productAdd)="addProduct($event)"
+        ></app-add-product>
+    </ion-card-content>
     <ion-card
             class="course-card"
             *ngFor="let product of productReadService.products; index as i"
@@ -37,12 +46,5 @@
                 (cancel)="hideDeleteForm()"
         ></app-delete-product>
     </ion-card>
-
-    <!-- Додавання товару -->
-    <ion-button (click)="addFormShow()">Додати товари</ion-button>
-    <app-add-product
-            *ngIf="showAddForm"
-            (productAdd)="addProduct($event)"
-    ></app-add-product>
 
 </ion-content>

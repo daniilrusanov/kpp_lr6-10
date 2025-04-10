@@ -15,13 +15,14 @@ import {ProductReadService} from "../../FlowerDeliveryService/service/ProductRea
 import {AddProductComponent} from "../../components/add-product/add-product.component";
 import {EditProductComponent} from "../../components/edit-product/edit-product.component";
 import {DeleteProductComponent} from "../../components/delete-product/delete-product.component";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-view-product-component',
   templateUrl: './view-product-component.page.html',
   styleUrls: ['./view-product-component.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, MyHeaderComponent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonItem, IonLabel, IonButton, AddProductComponent, EditProductComponent, DeleteProductComponent]
+  imports: [IonContent, CommonModule, FormsModule, MyHeaderComponent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonItem, IonLabel, IonButton, AddProductComponent, EditProductComponent, DeleteProductComponent, RouterLink]
 })
 export class ViewProductComponentPage implements OnInit {
 
