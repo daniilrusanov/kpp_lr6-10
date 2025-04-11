@@ -1,136 +1,170 @@
-{
-  "products": [
-    {
-      "type": "Bouquet",
-      "id": 1,
-      "name": "Romantic Roses",
-      "price": 500,
-      "flowerCount": 15,
-      "packageType": "Paper",
-      "colorTheme": "Red",
-      "hasNote": true
-    },
-    {
-      "type": "Bouquet",
-      "id": 2,
-      "name": "Sunny Day",
-      "price": 350,
-      "flowerCount": 9,
-      "packageType": "Plastic",
-      "colorTheme": "Yellow",
-      "hasNote": false
-    },
-    {
-      "type": "Bouquet",
-      "id": 3,
-      "name": "Spring Mood",
-      "price": 400,
-      "flowerCount": 12,
-      "packageType": "Paper",
-      "colorTheme": "Mixed",
-      "hasNote": true
-    },
-    {
-      "type": "IndoorPlant",
-      "id": 4,
-      "name": "Aloe Vera",
-      "price": 200,
-      "potType": "Ceramic",
-      "wateringFrequency": "Weekly",
-      "size": "Medium",
-      "isBlooming": false
-    },
-    {
-      "type": "IndoorPlant",
-      "id": 5,
-      "name": "Orchid",
-      "price": 450,
-      "potType": "Glass",
-      "wateringFrequency": "Twice a Week",
-      "size": "Small",
-      "isBlooming": true
-    },
-    {
-      "type": "IndoorPlant",
-      "id": 6,
-      "name": "Ficus",
-      "price": 300,
-      "potType": "Plastic",
-      "wateringFrequency": "Monthly",
-      "size": "Large",
-      "isBlooming": false
-    },
-    {
-      "type": "GiftSet",
-      "id": 7,
-      "name": "Love Combo",
-      "price": 1200,
-      "bouquets": [
-        { "id": 1, "name": "Romantic Roses", "price": 500 },
-        { "id": 2, "name": "Sunny Day", "price": 350 }
-      ],
-      "indoorPlants": [
-        { "id": 4, "name": "Aloe Vera", "price": 200 }
-      ]
-    },
-    {
-      "type": "GiftSet",
-      "id": 8,
-      "name": "Nature Box",
-      "price": 1100,
-      "bouquets": [
-        { "id": 3, "name": "Spring Mood", "price": 400 }
-      ],
-      "indoorPlants": [
-        { "id": 5, "name": "Orchid", "price": 450 },
-        { "id": 6, "name": "Ficus", "price": 300 }
-      ]
-    },
-    {
-      "type": "GiftSet",
-      "id": 9,
-      "name": "Floral Delight",
-      "price": 1000,
-      "bouquets": [
-        { "id": 2, "name": "Sunny Day", "price": 350 }
-      ],
-      "indoorPlants": [
-        { "id": 4, "name": "Aloe Vera", "price": 200 },
-        { "id": 6, "name": "Ficus", "price": 300 }
-      ]
-    },
-    {
-      "type": "EBouquet",
-      "id": 10,
-      "name": "Virtual Love",
-      "price": 250,
-      "format": "gif",
-      "flowerCount": 10,
-      "packageType": "Virtual",
-      "colorTheme": "Pink",
-      "hasNote": true
-    },
-    {
-      "type": "EBouquet",
-      "id": 11,
-      "name": "Animated Roses",
-      "price": 300,
-      "format": "mp4",
-      "flowerCount": 12,
-      "packageType": "Virtual",
-      "colorTheme": "Red",
-      "hasNote": false
-    },
-    {
-      "type": "EBouquet",
-      "id": 12,
-      "name": "Digital Spring",
-      "price": 200,
-      "format": "gif",
-      "flowerCount": 8,
-      "packageType": "Virtual",
-      "colorTheme": "Mixed",
-      "hasNote": true
-    }
-  ]
-}
+[
+  {
+    "type": "Bouquet",
+    "id": 1,
+    "name": "Romantic Roses",
+    "price": 500,
+    "flowerCount": 15,
+    "packageType": "Paper",
+    "colorTheme": "Red",
+    "hasNote": true
+  },
+  {
+    "type": "Bouquet",
+    "id": 2,
+    "name": "Sunny Day",
+    "price": 350,
+    "flowerCount": 9,
+    "packageType": "Plastic",
+    "colorTheme": "Yellow",
+    "hasNote": false
+  },
+  {
+    "type": "Bouquet",
+    "id": 3,
+    "name": "Spring Mood",
+    "price": 400,
+    "flowerCount": 12,
+    "packageType": "Paper",
+    "colorTheme": "Mixed",
+    "hasNote": true
+  },
+  {
+    "type": "IndoorPlant",
+    "id": 4,
+    "name": "Aloe Vera",
+    "price": 200,
+    "potType": "Ceramic",
+    "wateringFrequency": "Weekly",
+    "size": "Medium",
+    "isBlooming": false
+  },
+  {
+    "type": "IndoorPlant",
+    "id": 5,
+    "name": "Orchid",
+    "price": 450,
+    "potType": "Glass",
+    "wateringFrequency": "Twice a Week",
+    "size": "Small",
+    "isBlooming": true
+  },
+  {
+    "type": "IndoorPlant",
+    "id": 6,
+    "name": "Ficus",
+    "price": 300,
+    "potType": "Plastic",
+    "wateringFrequency": "Monthly",
+    "size": "Large",
+    "isBlooming": false
+  },
+  {
+    "type": "GiftSet",
+    "id": 7,
+    "name": "Love Combo",
+    "price": 1200,
+    "bouquets": [
+      {
+        "id": 1,
+        "name": "Romantic Roses",
+        "price": 500
+      },
+      {
+        "id": 2,
+        "name": "Sunny Day",
+        "price": 350
+      }
+    ],
+    "indoorPlants": [
+      {
+        "id": 4,
+        "name": "Aloe Vera",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "GiftSet",
+    "id": 8,
+    "name": "Nature Box",
+    "price": 1100,
+    "bouquets": [
+      {
+        "id": 3,
+        "name": "Spring Mood",
+        "price": 400
+      }
+    ],
+    "indoorPlants": [
+      {
+        "id": 5,
+        "name": "Orchid",
+        "price": 450
+      },
+      {
+        "id": 6,
+        "name": "Ficus",
+        "price": 300
+      }
+    ]
+  },
+  {
+    "type": "GiftSet",
+    "id": 9,
+    "name": "Floral Delight",
+    "price": 1000,
+    "bouquets": [
+      {
+        "id": 2,
+        "name": "Sunny Day",
+        "price": 350
+      }
+    ],
+    "indoorPlants": [
+      {
+        "id": 4,
+        "name": "Aloe Vera",
+        "price": 200
+      },
+      {
+        "id": 6,
+        "name": "Ficus",
+        "price": 300
+      }
+    ]
+  },
+  {
+    "type": "EBouquet",
+    "id": 10,
+    "name": "Virtual Love",
+    "price": 250,
+    "format": "gif",
+    "flowerCount": 10,
+    "packageType": "Virtual",
+    "colorTheme": "Pink",
+    "hasNote": true
+  },
+  {
+    "type": "EBouquet",
+    "id": 11,
+    "name": "Animated Roses",
+    "price": 300,
+    "format": "mp4",
+    "flowerCount": 12,
+    "packageType": "Virtual",
+    "colorTheme": "Red",
+    "hasNote": false
+  },
+  {
+    "type": "EBouquet",
+    "id": 12,
+    "name": "Digital Spring",
+    "price": 200,
+    "format": "gif",
+    "flowerCount": 8,
+    "packageType": "Virtual",
+    "colorTheme": "Mixed",
+    "hasNote": true
+  }
+]
