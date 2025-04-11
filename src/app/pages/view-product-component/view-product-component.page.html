@@ -13,7 +13,7 @@
     </ion-card-content>
     <ion-card
             class="course-card"
-            *ngFor="let product of productReadService.products; index as i"
+            *ngFor="let product of products; index as i"
     >
         <ion-card-header class="ccheader">
             <ion-card-title>{{ product.getName() }}</ion-card-title>

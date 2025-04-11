@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {Component, NgZone, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 import {
-  IonButton,
-  IonCard, IonCardContent,
-  IonCardHeader, IonCardSubtitle,
-  IonCardTitle,
-  IonContent,
-  IonItem,
-  IonLabel
+    IonButton,
+    IonCard, IonCardContent,
+    IonCardHeader, IonCardSubtitle,
+    IonCardTitle,
+    IonContent,
+    IonItem,
+    IonLabel
 } from '@ionic/angular/standalone';
 import {MyHeaderComponent} from "../../components/my-header/my-header.component";
 import {ProductReadService} from "../../FlowerDeliveryService/service/ProductReadService";
@@ -16,63 +16,80 @@ import {AddProductComponent} from "../../components/add-product/add-product.comp
 import {EditProductComponent} from "../../components/edit-product/edit-product.component";
 import {DeleteProductComponent} from "../../components/delete-product/delete-product.component";
 import {RouterLink} from "@angular/router";
+import {ProductBDReadService} from "../../FlowerDeliveryService/service/ProductBDReadService";
+import {IProduct} from "../../FlowerDeliveryService/basic/IProduct";
 
 @Component({
-  selector: 'app-view-product-component',
-  templateUrl: './view-product-component.page.html',
-  styleUrls: ['./view-product-component.page.scss'],
-  standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, MyHeaderComponent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonItem, IonLabel, IonButton, AddProductComponent, EditProductComponent, DeleteProductComponent, RouterLink]
+    selector: 'app-view-product-component',
+    templateUrl: './view-product-component.page.html',
+    styleUrls: ['./view-product-component.page.scss'],
+    standalone: true,
+    imports: [IonContent, CommonModule, FormsModule, MyHeaderComponent, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonItem, IonLabel, IonButton, AddProductComponent, EditProductComponent, DeleteProductComponent, RouterLink]
 })
 export class ViewProductComponentPage implements OnInit {
 
-  showAddForm: boolean = false;
+    public products: IProduct[] = [];
 
-  showEditForm: boolean = false;
-  editFormNumber = 0;
+    showAddForm: boolean = false;
 
-  showDeleteForm: boolean = false;
-  deleteFormNumber = 0;
+    showEditForm: boolean = false;
+    editFormNumber = 0;
 
-  constructor(public productReadService: ProductReadService) { }
+    showDeleteForm: boolean = false;
+    deleteFormNumber = 0;
 
-  ngOnInit() {
-    this.productReadService.load();
-  }
 
-  addFormShow() {
-    this.showAddForm = true;
-  }
+    constructor(
+        private productBDReadService: ProductBDReadService,
+        private zone: NgZone
+    ) {}
 
-  addProduct($event: any) {
-    this.productReadService.addProduct($event);
-    this.showAddForm = false;
-  }
+    ngOnInit() {
+        this.zone.run(() => {
+            console.log("Calling fetchProducts...");
+            this.productBDReadService.fetchProducts();
+            console.log("fetchProducts called");
 
-  editFormShow(i: number) {
-    this.showEditForm = true;
-    this.editFormNumber = i;
-  }
-
-  editProduct($event: any, i: number) {
-    this.productReadService.products[i] = $event;
-    this.showEditForm = false;
-  }
-
-  deleteFormShow(i: number) {
-    this.showDeleteForm = true;
-    this.deleteFormNumber = i;
-  }
-
-  hideDeleteForm() {
-    this.showDeleteForm = false;
-  }
-
-  deleteProduct(i: number) {
-    this.productReadService.products.splice(i, 1);
-    if (typeof this.productReadService.save === 'function') {
-      this.productReadService.save();
+            this.productBDReadService.product$.subscribe(product => {
+                this.products = product;
+                console.log("Products updated:", this.products);
+            });
+        });
     }
-    this.showDeleteForm = false;
-  }
+
+
+    addFormShow() {
+        this.showAddForm = true;
+        // this.showAddForm = !this.showAddForm;
+    }
+
+    addProduct($event: any) {
+        this.productBDReadService.addProduct($event);
+        this.showAddForm = false;
+    }
+
+    editFormShow(i: number) {
+        this.showEditForm = true;
+        // this.showEditForm = !this.showEditForm;
+        this.editFormNumber = i;
+    }
+
+    editProduct($event: any, i: number) {
+        this.productBDReadService.editProduct($event);
+        this.showEditForm = false;
+    }
+
+    deleteFormShow(i: number) {
+        this.showDeleteForm = true;
+        this.deleteFormNumber = i;
+    }
+
+    hideDeleteForm() {
+        this.showDeleteForm = false;
+    }
+
+    deleteProduct(i: number) {
+        this.productBDReadService.deleteProduct(i);
+        this.showDeleteForm = false;
+    }
 }

@@ -45,8 +45,10 @@ export class EditProductComponent implements OnInit {
     }
 
     onSubmit(): void {
+        console.log(this.product);
         if (this.productForm.valid) {
             const formData = this.productForm.value;
+            formData.id = this.product.getID();
             formData.type = this.product.getType();
             const product = ProductFactory.createProduct(this.productForm.value);
             this.productEdit.emit(product);
