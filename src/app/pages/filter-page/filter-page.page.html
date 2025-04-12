@@ -2,20 +2,28 @@
 
 <ion-content [fullscreen]="true">
     <ion-card-content>
-        <ion-button class="buttons" href=" ">Перегляд товарів</ion-button>
+        <ion-button class="buttons" routerLink="/view-product">Перегляд товарів</ion-button>
     </ion-card-content>
+
     <ion-item class="category-switch">
-        <ion-button class="category-button" (click)="nextType()">Наступна категорія</ion-button>
-        <ion-label class="current-type-label">Поточна категорія:</ion-label>
-        <ion-label class="current-type">{{ type }}</ion-label>
+        <ion-button class="category-button" (click)="nextType(1)">Наступна категорія №1</ion-button>
+        <ion-label class="current-type-label">Поточна категорія №1:</ion-label>
+        <ion-label class="current-type">{{ type1 }}</ion-label>
+    </ion-item>
+
+    <ion-item class="category-switch">
+        <ion-button class="category-button" (click)="nextType(2)">Наступна категорія №2</ion-button>
+        <ion-label class="current-type-label">Поточна категорія №2:</ion-label>
+        <ion-label class="current-type">{{ type2 }}</ion-label>
     </ion-item>
 
     <ion-card
             class="course-card"
-            *ngFor="let product of productService.searchProducts; let j = index"
+            *ngFor="let product of filteredProducts; let j = index"
     >
         <ion-card-header class="ccheader">
             <ion-card-title>{{ product.getName() }}</ion-card-title>
+            <ion-card-subtitle>{{ product.getType() }}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content class="body">
             <ion-item *ngFor="let details of product.getDetails()">
@@ -30,7 +38,7 @@
         <ion-button (click)="editFormShow(j)">Редагувати товар</ion-button>
         <app-edit-product
                 *ngIf="showEditForm && j == editFormNumber"
-                (productEdit)="editProduct($event, j)"
+                (productEdit)="editProduct($event)"
                 [product]="product"
         ></app-edit-product>
 

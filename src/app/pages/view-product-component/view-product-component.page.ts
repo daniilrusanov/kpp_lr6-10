@@ -59,8 +59,7 @@ export class ViewProductComponentPage implements OnInit {
 
 
     addFormShow() {
-        this.showAddForm = true;
-        // this.showAddForm = !this.showAddForm;
+       this.showAddForm = !this.showAddForm;
     }
 
     addProduct($event: any) {
@@ -69,18 +68,17 @@ export class ViewProductComponentPage implements OnInit {
     }
 
     editFormShow(i: number) {
-        this.showEditForm = true;
-        // this.showEditForm = !this.showEditForm;
+        this.showEditForm = !this.showEditForm;
         this.editFormNumber = i;
     }
 
-    editProduct($event: any, i: number) {
+    editProduct($event: any) {
         this.productBDReadService.editProduct($event);
         this.showEditForm = false;
     }
 
     deleteFormShow(i: number) {
-        this.showDeleteForm = true;
+        this.showDeleteForm = !this.showDeleteForm;
         this.deleteFormNumber = i;
     }
 

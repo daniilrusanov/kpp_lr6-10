@@ -33,7 +33,7 @@
         <ion-button (click)="editFormShow(i)">Редагувати товар</ion-button>
         <app-edit-product
                 *ngIf="showEditForm && i == editFormNumber"
-                (productEdit)="editProduct($event, i)"
+                (productEdit)="editProduct($event)"
                 [product]="product"
         ></app-edit-product>
 
@@ -42,7 +42,7 @@
         <app-delete-product
                 *ngIf="showDeleteForm && i == deleteFormNumber"
                 [product]="product"
-                (confirm)="deleteProduct(i)"
+                (confirm)="deleteProduct(products[i].getID())"
                 (cancel)="hideDeleteForm()"
         ></app-delete-product>
     </ion-card>
