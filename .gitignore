@@ -27,3 +27,5 @@ coverage/
 
 # Angular build output
 /.angular/
+
+environments/environment.ts
