@@ -1,59 +1,39 @@
 import { IProduct } from "./IProduct";
 
 export abstract class Product implements IProduct {
-    private _id: number;
-    private _name: string;
-    private _price: number;
-    private _type: string;
-    private _details: string[];
+    private id: number;
+    private name: string;
+    private price: number;
+    private type: string;
+    private details: string[];
 
     protected constructor(id: number, name: string, price: number, type: string = 'Product', details: string[] = []) {
         if(id < 0) throw new Error("Product ID should be greater than 0");
         if(price < 1) throw new Error("Product price should be greater than 1");
-        this._id = id;
-        this._name = name;
-        this._price = price;
-        this._type = type;
-        this._details = details;
-    }
-
-    getID(): number {
-        return this._id;
-    }
-
-    getName(): string {
-        return this._name;
-    }
-
-    getPrice(): number {
-        return this._price;
-    }
-
-    getType(): string {
-        return this._type;
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.type = type;
+        this.details = details;
     }
 
     getDetails(): string[] {
-        return this._details;
+        return this.details;
     }
 
-    set id(value: number) {
-        this._id = value;
+    getID(): number {
+        return this.id;
     }
 
-    set name(value: string) {
-        this._name = value;
+    getName(): string {
+        return this.name;
     }
 
-    set price(value: number) {
-        this._price = value;
+    getPrice(): number {
+        return this.price;
     }
 
-    set type(value: string) {
-        this._type = value;
-    }
-
-    set details(value: string[]) {
-        this._details = value;
+    getType(): string {
+        return this.type;
     }
 }
