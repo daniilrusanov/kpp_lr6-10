@@ -29,6 +29,7 @@ export class ProductBDReadService {
                     ProductFactory.createProduct(item)
                 )
                 : [];
+            this.productSubject.next(products);
             console.log('Fetched products:', products);
         });
     }
