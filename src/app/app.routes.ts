@@ -14,4 +14,8 @@ export const routes: Routes = [
     path: 'filter-page',
     loadComponent: () => import('./pages/filter-page/filter-page.page').then( m => m.FilterPagePage)
   },
+  {
+    path: 'pipe-project',
+    loadComponent: () => import('./pages/pipe-project/pipe-project.page').then( m => m.PipeProjectPage)
+  },
 ];
