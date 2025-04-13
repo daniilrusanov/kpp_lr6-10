@@ -1,0 +1,111 @@
+<app-my-header name="Лабораторна робота №10"></app-my-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-card-content>
+        <ion-button class="buttons" routerLink="/view-product-component">Перегляд товарів</ion-button>
+    </ion-card-content>
+
+
+    <ion-fab slot="fixed" vertical="top" horizontal="start">
+        <ion-fab-button (click)="setOpen(!isModalOpen)">
+            <ion-icon name="wallet"></ion-icon>
+            {{ backedService.backedSum }}
+        </ion-fab-button>
+    </ion-fab>
+
+    <!-- Bouquet and EBouquet -->
+    <ion-card class="course-card" *ngFor="let occasion of occasions">
+        <ion-card class="course-card" *ngFor="let type of types1">
+
+            <ion-card-header class="ccheader">
+                <ion-card-title>{{ type }} for {{occasion}} </ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content class="body">
+
+                <ion-card class="course-card" *ngFor="let product of products | filterByOccasion : type : occasion">
+                    <ion-card-header class="ccheader">
+                        <ion-card-title>{{ product.getName() }}</ion-card-title>
+                    </ion-card-header>
+
+                    <ion-card-content class="body">
+                        <ion-item *ngFor="let details of product.getDetails()">
+                            <ion-label>{{ details }}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Ціна: {{ product.getPrice() }}</ion-label>
+                        </ion-item>
+                        <ion-button (click)="addBacked(product.getID())">Додати до кошика</ion-button>
+                    </ion-card-content>
+                </ion-card>
+            </ion-card-content>
+        </ion-card>
+    </ion-card>
+
+    <!-- IndoorPlant and GiftSet -->
+    <ion-card class="course-card" *ngFor="let type of types2">
+        <ion-card-header class="ccheader">
+            <ion-card-title>{{ type }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="body">
+
+            <ion-card class="course-card" *ngFor="let product of products | filterByCategory : type">
+                <ion-card-header class="ccheader">
+                    <ion-card-title>{{ product.getName() }}</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content class="body">
+                    <ion-item *ngFor="let details of product.getDetails()">
+                        <ion-label>{{ details }}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Ціна: {{ product.getPrice() }}</ion-label>
+                    </ion-item>
+                    <ion-button (click)="addBacked(product.getID())">Додати до кошика</ion-button>
+                </ion-card-content>
+            </ion-card>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Корзина покупок</ion-title>
+                    <ion-button class="modal-close-btn" (click)="setOpen(!isModalOpen)" slot="end">CLose</ion-button>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding">
+                <ion-item *ngFor="let product of backedService.backedProducts; index as i">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>Товар - {{ product.getName() }}</ion-col>
+                            <ion-col>{{ product.getPrice() }} грн.</ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                Кількість: {{ backedService.backedCount[i] }}
+                                <ion-button
+                                        class="modal-decrease-btn"
+                                        (click)="deleteOneBacked(product.getID())"
+                                >-
+                                </ion-button>
+                            </ion-col>
+                            <ion-col>
+                                <ion-button
+                                        class="modal-delete-btn"
+                                        (click)="deleteBacked(product.getID())"
+                                >
+                                    Видалити
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-item>
+                <ion-toolbar>Загальна вартість: {{ backedService.backedSum }}</ion-toolbar>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+</ion-content>
