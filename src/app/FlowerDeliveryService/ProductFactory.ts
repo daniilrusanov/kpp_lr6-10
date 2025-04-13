@@ -15,6 +15,7 @@ export class ProductFactory {
             data.flowerCount ?? 0,
             data.packageType ?? 'Paper',
             data.colorTheme ?? 'Basic',
+            data.occasion ?? 'None',
             data.hasNote ?? false
         );
     }
@@ -28,6 +29,7 @@ export class ProductFactory {
             data.flowerCount ?? 0,
             data.packageType ?? 'Paper',
             data.colorTheme ?? 'Basic',
+            data.occasion ?? 'None',
             data.hasNote ?? false
         );
     }

@@ -1,7 +1,7 @@
 import {Bouquet} from "./Bouquet";
 
 export class EBouquet extends Bouquet {
-    private format: string;
+    format: string;
 
     constructor(
         id: number,
@@ -11,9 +11,10 @@ export class EBouquet extends Bouquet {
         flowerCount: number,
         packageType: string ,
         colorTheme: string,
+        occasion: string,
         hasNote: boolean
     ) {
-        super(id, name, price, flowerCount, packageType, colorTheme, hasNote, "EBouquet");
+        super(id, name, price, flowerCount, packageType, colorTheme, occasion, hasNote, "EBouquet");
         this.format = format;
     }
 
@@ -23,6 +24,7 @@ export class EBouquet extends Bouquet {
             `Flower count: ${this.flowerCount}`,
             `Package type: ${this.packageType}`,
             `Color theme: ${this.colorTheme}`,
+            `Occasion: ${this.occasion}`,
             `Message included?: ${this.hasNote ? 'Yes' : 'No'}`
         ];
     }

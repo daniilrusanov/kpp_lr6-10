@@ -8,7 +8,7 @@ describe('GiftSet Class', () => {
     let giftSet: GiftSet;
 
     beforeEach(() => {
-        bouquet = new Bouquet(1, 'Roses', 500, 15, 'Paper', 'Red', true);
+        bouquet = new Bouquet(1, 'Roses', 500, 15, 'Paper', 'Red', 'Birthday', true);
         indoorPlant = new IndoorPlant(2, 'Aloe Vera', 200, 'Ceramic', 'Monthly', 'Small', false);
 
         giftSet = new GiftSet(
@@ -45,6 +45,7 @@ describe('GiftSet Class', () => {
             "Flower count: 15",
             "Package type: Paper",
             "Color theme: Red",
+            `Occasion: Birthday`,
             "Message included?: Yes",
             "HousePlant details:",
             "Pot type: Ceramic",

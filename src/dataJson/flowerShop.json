@@ -8,6 +8,7 @@
       "flowerCount": 15,
       "packageType": "Paper",
       "colorTheme": "Red",
+      "occasion": "Anniversary",
       "hasNote": true
     },
     {
@@ -18,6 +19,7 @@
       "flowerCount": 9,
       "packageType": "Plastic",
       "colorTheme": "Yellow",
+      "occasion": "Graduation",
       "hasNote": false
     },
     {
@@ -28,7 +30,41 @@
       "flowerCount": 12,
       "packageType": "Paper",
       "colorTheme": "Mixed",
+      "occasion": "Birthday",
       "hasNote": true
+    },
+    {
+      "type": "Bouquet",
+      "id": 13,
+      "name": "Elegant Whites",
+      "price": 420,
+      "flowerCount": 11,
+      "packageType": "Paper",
+      "colorTheme": "White",
+      "occasion": "Graduation",
+      "hasNote": false
+    },
+    {
+      "type": "Bouquet",
+      "id": 14,
+      "name": "Golden Glow",
+      "price": 390,
+      "flowerCount": 10,
+      "packageType": "Plastic",
+      "colorTheme": "Orange",
+      "occasion": "Anniversary",
+      "hasNote": true
+    },
+    {
+      "type": "Bouquet",
+      "id": 15,
+      "name": "Purple Dream",
+      "price": 370,
+      "flowerCount": 13,
+      "packageType": "Paper",
+      "colorTheme": "Purple",
+      "occasion": "Birthday",
+      "hasNote": false
     },
     {
       "type": "IndoorPlant",
@@ -108,6 +144,7 @@
       "flowerCount": 10,
       "packageType": "Virtual",
       "colorTheme": "Pink",
+      "occasion": "Birthday",
       "hasNote": true
     },
     {
@@ -119,6 +156,7 @@
       "flowerCount": 12,
       "packageType": "Virtual",
       "colorTheme": "Red",
+      "occasion": "Anniversary",
       "hasNote": false
     },
     {
@@ -130,6 +168,43 @@
       "flowerCount": 8,
       "packageType": "Virtual",
       "colorTheme": "Mixed",
+      "occasion": "Graduation",
+      "hasNote": true
+    },
+    {
+      "type": "EBouquet",
+      "id": 16,
+      "name": "Cyber Blossoms",
+      "price": 220,
+      "format": "gif",
+      "flowerCount": 7,
+      "packageType": "Virtual",
+      "colorTheme": "Blue",
+      "occasion": "Anniversary",
+      "hasNote": true
+    },
+    {
+      "type": "EBouquet",
+      "id": 17,
+      "name": "Digital Love",
+      "price": 280,
+      "format": "mp4",
+      "flowerCount": 9,
+      "packageType": "Virtual",
+      "colorTheme": "Pink",
+      "occasion": "Graduation",
+      "hasNote": false
+    },
+    {
+      "type": "EBouquet",
+      "id": 18,
+      "name": "Pixel Flowers",
+      "price": 260,
+      "format": "gif",
+      "flowerCount": 10,
+      "packageType": "Virtual",
+      "colorTheme": "Green",
+      "occasion": "Birthday",
       "hasNote": true
     }
   ]

@@ -4,7 +4,7 @@ describe('Bouquet Class', () => {
     let bouquet: Bouquet;
 
     beforeEach(() => {
-        bouquet = new Bouquet(1, 'Romantic Roses', 100, 15, 'Paper', 'Red', true);
+        bouquet = new Bouquet(1, 'Romantic Roses', 100, 15, 'Paper', 'Red', 'Birthday', true);
     });
 
     it('should create bouquet with correct properties', () => {
@@ -22,11 +22,13 @@ describe('Bouquet Class', () => {
         bouquet.flowerCount = 20;
         bouquet.packageType = 'Fabric';
         bouquet.colorTheme = 'White';
+        bouquet.occasion = 'Anniversary';
         bouquet.hasNote = false;
 
         expect(bouquet.flowerCount).to.equal(20);
         expect(bouquet.packageType).to.equal('Fabric');
         expect(bouquet.colorTheme).to.equal('White');
+        expect(bouquet.occasion).to.equal('Anniversary');
         expect(bouquet.hasNote).to.equal(false);
     });
 
@@ -35,6 +37,7 @@ describe('Bouquet Class', () => {
             'Flower count: 15',
             'Package type: Paper',
             'Color theme: Red',
+            `Occasion: Birthday`,
             'Message included?: Yes'
         ]);
 
@@ -44,6 +47,7 @@ describe('Bouquet Class', () => {
             'Flower count: 15',
             'Package type: Paper',
             'Color theme: Red',
+            `Occasion: Birthday`,
             'Message included?: No'
         ]);
     });

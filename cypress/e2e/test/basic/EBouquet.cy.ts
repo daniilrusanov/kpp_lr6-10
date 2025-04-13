@@ -4,7 +4,7 @@ describe('EBouquet Class', () => {
     let bouquet: EBouquet;
 
     beforeEach(() => {
-        bouquet = new EBouquet(1, 'Romantic Roses', 100, 'Digital', 15, 'Paper', 'Red', true);
+        bouquet = new EBouquet(1, 'Romantic Roses', 100, 'Digital', 15, 'Paper', 'Red', 'Birthday', true);
     });
 
     it('should create bouquet with correct properties', () => {
@@ -24,12 +24,14 @@ describe('EBouquet Class', () => {
         bouquet.flowerCount = 20;
         bouquet.packageType = 'Fabric';
         bouquet.colorTheme = 'White';
+        bouquet.occasion = 'Anniversary';
         bouquet.hasNote = false;
 
         expect(bouquet.format).to.equal('PDF');
         expect(bouquet.flowerCount).to.equal(20);
         expect(bouquet.packageType).to.equal('Fabric');
         expect(bouquet.colorTheme).to.equal('White');
+        expect(bouquet.occasion).to.equal('Anniversary');
         expect(bouquet.hasNote).to.equal(false);
     });
 
@@ -39,6 +41,7 @@ describe('EBouquet Class', () => {
             'Flower count: 15',
             'Package type: Paper',
             'Color theme: Red',
+            `Occasion: Birthday`,
             'Message included?: Yes'
         ]);
 
@@ -49,6 +52,7 @@ describe('EBouquet Class', () => {
             'Flower count: 15',
             'Package type: Paper',
             'Color theme: Red',
+            `Occasion: Birthday`,
             'Message included?: No'
         ]);
     });
